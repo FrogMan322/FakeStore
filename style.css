@@ -1,0 +1,463 @@
+/* imported font: "Tilt Warp", cursive; */
+@import url("https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap");
+
+:root {
+  --modal-imgWidth: 800px;
+  --modal-imgHeight: 800px;
+}
+
+/* navigation */
+.nav__container {
+  top: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #2f58cd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo__nav {
+  font-family: "Tilt Warp", cursive;
+  font-size: 3rem;
+  margin: 0 0 0 2rem;
+  padding: 0;
+  cursor: pointer;
+}
+.buergerMenu {
+  display: none;
+}
+.shoping__cart {
+  font-size: 3rem;
+  background-color: #2f58cd;
+  margin: 0;
+  padding: 0;
+  border-radius: 5px;
+}
+.cart {
+  margin: 0 2rem 0 0;
+  position: relative;
+  cursor: pointer;
+}
+.cartNumber {
+  background-color: red;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 7px;
+  visibility: hidden;
+}
+.navigation {
+  background-color: black;
+  height: 0;
+  transition: all 1000ms;
+  overflow: hidden;
+}
+
+.navigation__active {
+  height: 3rem;
+}
+
+/* ! SHOWS NUMBER ON CART WHEN CART HAS ITEMS IN IT */
+.visibleNumber {
+  visibility: visible;
+}
+
+.shoping__cart:hover {
+  color: red;
+}
+
+.cartNumber {
+  text-align: center;
+  border: 1px solid red;
+  font-size: 18px;
+}
+@media (max-width: 630px) {
+  .nav__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo__nav {
+    font-family: "Tilt Warp", cursive;
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0;
+  }
+  .shoping__cart {
+    font-size: 3rem;
+    background-color: #2f58cd;
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+  }
+}
+
+/* side bar cart */
+
+.sideBar__container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  overflow: scroll;
+  width: 23rem;
+  height: 100%;
+  z-index: 5;
+  background-color: white;
+  transition: all 500ms;
+  transform: translateX(100%);
+}
+
+.modal__cart {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.601);
+  z-index: 3;
+  top: 0;
+  display: none;
+}
+.infoSidebar {
+  height: 3rem;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.infoSidebar h1,
+.infoSidebar .bi-x-lg {
+  font-family: "Tilt Warp", cursive;
+  font-size: 2rem;
+  display: block;
+}
+.bi-x-lg:hover {
+  color: red;
+}
+
+.infoSidebar .bi-x-lg {
+  cursor: pointer;
+}
+.cart__elements {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+.cart__elements > img {
+  width: 20rem;
+  height: 20rem;
+  object-fit: contain;
+}
+.cartElement__price {
+  width: 100%;
+  font-family: "Tilt Warp", cursive;
+  font-size: 1rem;
+  border-bottom: 2px solid orange;
+}
+.cartElement__quontity {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid orange;
+  font-family: "Tilt Warp", cursive;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  font-size: 1.5rem;
+}
+/* ovo je span */
+.number__order {
+  min-width: 1rem;
+  min-height: 1rem;
+  text-align: center;
+  color: white;
+  padding: 2px;
+  background-color: red;
+  border: 1px solid red;
+  font-size: 1rem;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.deleteBtn {
+  width: 100%;
+  height: 2rem;
+  font-family: "Tilt Warp", cursive;
+  color: black;
+  background-color: orange;
+  border: none;
+}
+.deleteBtn:hover {
+  color: orange;
+  background-color: black;
+  cursor: pointer;
+}
+.location {
+  font-family: "Tilt Warp", cursive;
+  font-size: 1rem;
+}
+.totalBill {
+  font-family: "Tilt Warp", cursive;
+  font-size: 2rem;
+  border-bottom: 3px solid black;
+}
+.deleteBtnAll {
+  width: 100%;
+  height: 2rem;
+  font-family: "Tilt Warp", cursive;
+  color: red;
+  background-color: black;
+  border: none;
+  font-family: 5rem;
+}
+.deleteBtnAll:hover {
+  color: black;
+  background-color: red;
+}
+.sizingBtns {
+  cursor: pointer;
+  font-size: 1.3rem;
+}
+.sizingBtns:hover {
+  color: red;
+}
+/*! opens sidebar */
+.open {
+  transform: translateX(0);
+}
+/* prod container */
+
+.item__container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 20px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.prod__container {
+  border: 1px solid black;
+  width: 20rem;
+  justify-items: center;
+  transition: all 400ms;
+}
+.prod__container:hover {
+  border: 1px solid black;
+  width: 23rem;
+  justify-items: center;
+  box-shadow: 0 10px 6px -6px #777;
+}
+/* FILTER CLASS  */
+.filter__item {
+  display: none;
+}
+
+.btnForm {
+  height: 2rem;
+  font-family: "Tilt Warp", cursive;
+  color: black;
+  background-color: orange;
+  border: none;
+  cursor: pointer;
+}
+.btnForm:hover {
+  font-family: "Tilt Warp", cursive;
+  color: orange;
+  background-color: black;
+}
+.label__style {
+  font-family: "Tilt Warp", cursive;
+  font-size: 1.3rem;
+  margin: 0 0 0 2rem;
+  padding: 0;
+}
+.sort__style {
+  margin-bottom: 0.3rem;
+  font-family: "Tilt Warp", cursive;
+  font-size: 1.3rem;
+}
+.img__container,
+.img__element {
+  transition: all 400ms cubic-bezier(0.17, 0.67, 0.88, 0.66);
+  max-height: 300px;
+  background-color: orange;
+  cursor: pointer;
+}
+.img__container:hover,
+.img__element:hover {
+  background-color: #2f58cd;
+}
+
+.img__element {
+  object-fit: contain;
+  width: 100%;
+  height: 18.75rem;
+}
+
+.cartBtn {
+  text-align: center;
+  width: 100%;
+  background-color: orange;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-family: "Tilt Warp", cursive;
+}
+.cartBtn:hover {
+  transition: all 400ms cubic-bezier(0.17, 0.67, 0.88, 0.66);
+  color: orange;
+  background-color: black;
+}
+.textDecor {
+  font-size: 1.5rem;
+  font-family: "Tilt Warp", cursive;
+}
+.descritpion__text {
+  border-bottom: 0.3rem solid black;
+  border-top: 0.3rem solid black;
+  font-family: "Tilt Warp", cursive;
+  min-height: 3rem;
+  font-size: 1rem;
+}
+
+/* img__modal */
+.img__modal {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.501);
+  top: 0;
+  display: none;
+}
+.imgModal {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  max-height: var(--modal-imgWidth);
+  max-width: var(--modal-imgHeight);
+  background-color: white;
+  top: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.imgModal img {
+  max-height: var(--modal-imgWidth);
+  max-width: var(--modal-imgHeight);
+  object-fit: contain;
+}
+.mobile__filter {
+  display: none;
+}
+.display__img__container {
+  position: fixed;
+  display: block;
+}
+/* mobile screen media query */
+@media (max-width: 1200px) {
+  .buergerMenu {
+    display: block;
+    font-size: 3rem;
+    background-color: #2f58cd;
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+  }
+  .buergerMenu > img {
+    width: 3rem;
+    height: 3rem;
+    margin: 0 1rem;
+  }
+  /* burger menu side bar */
+  .mobile__filter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 100;
+    background-color: white;
+    width: 300px;
+    height: 100%;
+    transition: all 0.5ms ease;
+    transform: translate(-100%);
+  }
+  .itemFilter__mobile {
+    display: flex;
+    flex-direction: column;
+  }
+  .itemFilter {
+    display: none;
+  }
+  .price__mobile {
+    margin-top: 2rem;
+  }
+  .price {
+    display: none;
+  }
+  .logo__nav {
+    display: none;
+  }
+  .bi-x-octagon {
+    font-size: 2rem;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .imgModal {
+    position: fixed;
+    max-height: 30rem;
+    max-width: 30rem;
+    background-color: white;
+    top: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .imgModal img {
+    max-height: 30rem;
+    max-width: 30rem;
+    object-fit: contain;
+  }
+}
+@media (max-width: 400px) {
+  .imgModal {
+    position: fixed;
+    max-height: 20rem;
+    max-width: 20rem;
+    background-color: white;
+    top: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .imgModal img {
+    max-height: 20rem;
+    max-width: 20rem;
+    object-fit: contain;
+  }
+  .sideBar__container {
+    width: 18rem;
+  }
+  .cart__elements > img {
+    max-width: 18rem;
+    height: 20rem;
+    object-fit: contain;
+    background-position: center;
+  }
+}
+
+/* mobile bar filter transitions */
+.mobile__filter.open {
+  transform: translate(0);
+  z-index: 5;
+}
+
+.mobile__modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.601);
+  z-index: 3;
+  top: 0;
+  display: none;
+}

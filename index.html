@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css-reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./search.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+    <link rel="icon" type="image/x-icon" href="icons/store-bag-svgrepo-com.svg">
+     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js" defer></script> -->
+    <!-- <script src="./renderItems.js" defer></script> -->
+    <script src="./app.js" type="module" defer></script>
+    <title>Random Shop</title>
+  </head>
+  <body>
+    <!-- nav bar -->
+    <div class="nav__container">
+      <h1 class="logo__nav">Random Store</h1>
+      <div class="buergerMenu">
+        <img src="icons/list.svg" alt="burgerMenu">
+      </div>
+      <form class="itemFilter">
+        <label for="itemElementsForm" class="label__style">Choose a category:</label>
+        <select name="items" id="itemElementsForm" >
+          <option value="electronics">electronics</option>
+          <option value= "jewelery">jewelery</option>
+          <option value="men's clothing">men's clothing</option>
+          <option value="women's clothing">women's clothing</option>
+          </select>
+          <button type="submit" class="btnForm">Select</button>
+        <button class="removeFilter btnForm">Reset</button>
+      </form>
+      <div class="price">
+        <h1 class="sort__style">sort by price</h1>
+        <button class="lower btnForm">Low Price</button>
+        <button class="higher btnForm">High Price</button>
+        <button class="resetPrice btnForm">Reset Price</button>
+      </div>
+      <div class="cart">
+        <i class="bi bi-cart3 shoping__cart"></i>
+        <h1 class="cartNumber" >0</h1>
+      </div>
+    </div>
+    <!-- ! seach element start -->
+    <div class="search__container">
+      <form class="search__form">
+        <input type="search" name="search" id="search">
+        <button type="button" class="search__btn"><i class="bi bi-search"></i></button>
+      </form>
+    </div>
+    <!-- ! seach element end -->
+      <div class="mobile__modal">
+        <div class="mobile__filter">
+          <i class="bi bi-x-octagon"></i>
+          <form class="itemFilter__mobile">
+            <label for="itemElementsFormMob" class="label__style">Choose a category:</label>
+            <select name="items" id="itemElementsFormMob" >
+              <option value="electronics">electronics</option>
+              <option value= "jewelery">jewelery</option>
+              <option value="men's clothing">men's clothing</option>
+              <option value="women's clothing">women's clothing</option>
+              </select>
+              <button type="submit" class="btnForm btnFormSelect">Select</button>
+            <button class="removeFilter removeFilter__mob btnForm">Reset</button>
+          </form>
+          <div class="price__mobile">
+            <h1 class="sort__style">sort by price:</h1>
+            <button class="lower lowerMob btnForm">Low Price</button>
+            <button class="higher higherMob btnForm">High Price</button>
+        
+          </div>
+        </div>
+      </div>
+    <!-- tabs slider -->
+    <div class="tabs__container">
+      <div class="tabs__cotainer__image">
+        <!-- <img src="#" alt=""> -->
+      </div>
+    </div>
+    <!-- sidebar -->
+    <div class="modal__cart"></div>
+    <div class="sideBar__container">
+      <div class="infoSidebar">
+        <h1>Cart Items</h1>
+        <i class="bi bi-x-lg"></i>
+      </div>
+      <h1 class="location"></h1>
+      <h1 class="totalBill">Total Bill:</h1>
+      <button class="deleteBtnAll" >DELETE ALL</button>
+      <!-- cart items -->
+      <div class="containerEl__cart">
+      </div>
+      </div>
+    </div>
+
+    <!-- products container -->
+    <div class="item__container"></div>
+
+    <!-- image modal -->
+    <div class="img__modal"></div>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+.search__container {
+  width: 100%;
+  height: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+}
+.search__form {
+  justify-self: center;
+  grid-column: 2/3;
+}
+[name="search"] {
+  width: 200px;
+}
+.search__btn {
+  cursor: pointer;
+  font-size: 1rem;
+  background-color: orange;
+  border: none;
+}

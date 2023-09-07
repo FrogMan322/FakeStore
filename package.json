@@ -1,0 +1,19 @@
+{
+  "name": "shopping-cart-api",
+  "version": "1.0.0",
+  "description": "random store",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "buffer": "^5.7.1",
+    "parcel": "^2.8.3"
+  },
+  "dependencies": {
+    "aos": "^2.3.4",
+    "axios": "^1.4.0"
+  }
+}
