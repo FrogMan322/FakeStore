@@ -253,31 +253,25 @@ const resetBtn = document.querySelector(".itemFilter>.removeFilter");
 filterForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const formValue = itemElementsForm.value;
-  // Array.from(itemContaner.querySelectorAll(".prod__container")).forEach(
-  //   (obj) => {
-  //     const filterdElement = obj.dataset.filter;
-  //     if (!(filterdElement === formValue)) {
-  //       obj.classList.add("filter__item");
-  //     } else if (filterdElement === formValue) {
-  //       obj.classList.remove("filter__item");
-  //     }
-  //   }
-  // );
-  e.preventDefault();
-
+  console.log(formValue);
   fetch(`https://fakestoreapi.com/products/category/${formValue}`, coreSettings)
     .then((res) => {
       return res.json();
     })
     .then((data) => {
+      console.log(data);
       const renderCategory = data
         .map((el, idx) => {
           const { id, title, price, category, description, image, rating } = el;
 
-          renderElemensFunction(category, image, title, price, id, idx);
+          return renderElemensFunction(category, image, title, price, id, idx);
         })
         .join("");
-      itemContaner.innerHTML = renderCategory;
+      console.log(renderCategory);
+      return renderCategory;
+    })
+    .then((data) => {
+      itemContaner.innerHTML = data;
     })
     .catch((err) => {
       console.log(err);
@@ -287,11 +281,7 @@ filterForm.addEventListener("submit", (e) => {
 //RESET FILTER FUNCTION
 resetBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  // Array.from(itemContaner.querySelectorAll(".prod__container")).forEach(
-  //   (obj) => {
-  //     obj.classList.remove("filter__item");
-  //   }
-  // );
+
   renderItems();
 });
 
