@@ -85,11 +85,6 @@ function addImageToModal() {
     .join("");
   imgModal.innerHTML = element;
 }
-// function slideImgNext(e) {
-//   const value = e.target;
-//   console.log(value);
-// }
-// imgModal.addEventListener("click", slideImgNext);
 
 imgModal.addEventListener("click", (e) => {
   imgModal.classList.remove("display__img__container");
@@ -253,13 +248,12 @@ const resetBtn = document.querySelector(".itemFilter>.removeFilter");
 filterForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const formValue = itemElementsForm.value;
-  console.log(formValue);
+
   fetch(`https://fakestoreapi.com/products/category/${formValue}`, coreSettings)
     .then((res) => {
       return res.json();
     })
     .then((data) => {
-      console.log(data);
       const renderCategory = data
         .map((el, idx) => {
           const { id, title, price, category, description, image, rating } = el;
@@ -267,7 +261,7 @@ filterForm.addEventListener("submit", (e) => {
           return renderElemensFunction(category, image, title, price, id, idx);
         })
         .join("");
-      console.log(renderCategory);
+
       return renderCategory;
     })
     .then((data) => {
