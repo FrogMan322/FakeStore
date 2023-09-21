@@ -1,3 +1,4 @@
 # Ignorisi fajlove
 dist 
 .parcel-cache
+node_modules
