@@ -128,7 +128,6 @@ function renderItemsInCart() {
   cartContainer.innerHTML = element;
   sumTotalPrice();
   numberOfItems();
-  // localStorage.setItem("data", JSON.stringify(cartItems));
 }
 //DELETE BUTTONN FROM CART
 function deleteItem(index) {

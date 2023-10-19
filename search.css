@@ -16,6 +16,13 @@
 .search__btn {
   cursor: pointer;
   font-size: 1rem;
+  padding: 0.3rem;
+  border-radius: 0.7rem;
   background-color: orange;
   border: none;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.search__btn:hover {
+  background-color: black;
+  color: white;
 }

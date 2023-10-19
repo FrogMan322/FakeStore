@@ -37,12 +37,9 @@ export function renderCart(category, image, title, price, id, item, index) {
 export function rederImgModal(imgForModal) {
   return `
   <div class="imgModal">
-  <button class='modal__btnPrev'>PREV</button>
   <img
     src="${imgForModal}"
     alt="modal image"
   />
-  
-  <button class='modal__btnNext'>NEXT</button>
 </div>`;
 }
