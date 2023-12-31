@@ -237,13 +237,23 @@
   border: 1px solid black;
   width: 20rem;
   justify-items: center;
-  transition: all 400ms;
+  transform: translate(0deg);
+  margin: 0px;
+  transition: transform 400ms ease-in;
 }
+
 .prod__container:hover {
-  border: 1px solid black;
-  width: 23rem;
-  justify-items: center;
-  box-shadow: 0 10px 6px -6px #777;
+  animation: rotacija 400ms ease-in forwards;
+}
+@keyframes rotacija {
+  from {
+    margin: 0;
+    transform: rotate(0deg);
+  }
+  to {
+    margin: 20px;
+    transform: rotate(5deg);
+  }
 }
 /* FILTER CLASS  */
 .filter__item {
@@ -281,10 +291,10 @@
   background-color: orange;
   cursor: pointer;
 }
-.img__container:hover,
+/* .img__container:hover,
 .img__element:hover {
   background-color: #2f58cd;
-}
+} */
 
 .img__element {
   object-fit: contain;
