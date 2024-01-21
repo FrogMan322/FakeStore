@@ -85,7 +85,7 @@
   }
   .shoping__cart {
     font-size: 3rem;
-    background-color: #2f58cd;
+    background-color: purple;
     margin: 0;
     padding: 0;
     border-radius: 5px;
@@ -242,10 +242,23 @@
   transition: transform 400ms ease-in;
 }
 
-.prod__container:hover {
-  animation: rotacija 400ms ease-in forwards;
+.add__animation {
+  animation: rotacijaAdd 400ms ease forwards;
 }
-@keyframes rotacija {
+.remove__animation {
+  animation: rotacijaRemove 400ms ease forwards;
+}
+@keyframes rotacijaAdd {
+  from {
+    margin: 0;
+    transform: rotate(0deg);
+  }
+  to {
+    margin: 20px;
+    transform: rotate(5deg);
+  }
+}
+@keyframes rotacijaRemove {
   from {
     margin: 0;
     transform: rotate(0deg);
@@ -365,7 +378,7 @@
   .buergerMenu {
     display: block;
     font-size: 3rem;
-    background-color: #2f58cd;
+    background-color: purple;
     margin: 0;
     padding: 0;
     border-radius: 5px;
